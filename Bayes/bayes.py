@@ -3,7 +3,7 @@
 import numpy as np
 import struct
 import matplotlib.pyplot as plt
-from .load_data import *
+from load_data import *
 
 
 def PCA(X, k=50):

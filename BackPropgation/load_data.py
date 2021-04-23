@@ -93,13 +93,17 @@ def run():
     # test_images = load_test_images()
     # test_labels = load_test_labels()
 
+    print(train_images.shape)
+    print(train_labels.shape)
+
+
     # 查看前十个数据及其标签以读取是否正确
-    for i in range(10):
-        print(train_labels[i])
-        # print(train_images[i])
-        # a = np.array(train_images[i])
-        # plt.imshow(a.reshape(28,28), cmap='gray')
-        # plt.show()
+    # for i in range(10):
+    #     print(train_labels[i])
+    #     print(train_images[i])
+    #     a = np.array(train_images[i])
+    #     plt.imshow(a.reshape(28,28), cmap='gray')
+    #     plt.show()
     print('done')
 
 
