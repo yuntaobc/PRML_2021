@@ -47,7 +47,7 @@ def batch_generate(sample_account, batch_size):
     batch_account = int(sample_account / batch_size)
     result = np.zeros(shape=(batch_account, batch_size), dtype=np.int32)
 
-    # TODO: realize true random array
+    # TODO: realize real random array
     for i in range(batch_account):
         result[i] = range(i * batch_size, i * batch_size + batch_size, 1)
 
