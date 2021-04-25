@@ -9,7 +9,7 @@ def sigmoid(inputs):
 class Layer:
     def __init__(self, input_dim, output_dim):
         self.input_dim = input_dim
-        self.input_dim = output_dim
+        self.output_dim = output_dim
         self.weights = np.random.rand(output_dim, input_dim)
         self.bias = np.random.rand(output_dim)
         self.result = 0
@@ -29,6 +29,6 @@ class Layer:
             print(f"Input data dim is {data.shape.__len__()} should be 2")
             return False
         if data.shape[1] != self.input_dim:
-            print(f"Input data shape is {data.shape} should be (n, {self.input_dim})")
+            print(f"Input data shape is {data.shape[1]} should be (n, {self.input_dim})")
             return False
         return True
