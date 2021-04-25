@@ -62,11 +62,11 @@ def decode_idx1_ubyte(idx1_ubyte_file):
     # 解析数据集
     offset += struct.calcsize(fmt_header)
     fmt_image = '>B'
-    labels = np.empty(num_images)
+    labels = np.zeros(shape=(num_images, 10))
     for i in range(num_images):
         # if (i + 1) % 10000 == 0:
             # print('已解析 %d' % (i + 1) + '张')
-        labels[i] = struct.unpack_from(fmt_image, bin_data, offset)[0]
+        labels[i][struct.unpack_from(fmt_image, bin_data, offset)[0]] = 1
         offset += struct.calcsize(fmt_image)
     return labels
 
@@ -88,8 +88,8 @@ def load_test_labels(idx_ubyte_file=test_labels_idx1_ubyte_file):
 
 
 def run():
-    train_images = load_train_images()  # (num_rows*num_cols,num_images)
-    train_labels = load_train_labels()
+    train_images = load_train_images()  # (num_images, num_rows*num_cols)
+    train_labels = load_train_labels()  # (num_images, 10)
     # test_images = load_test_images()
     # test_labels = load_test_labels()
 
