@@ -32,3 +32,7 @@ class Layer:
             print(f"Input data shape is {data.shape[1]} should be (n, {self.input_dim})")
             return False
         return True
+
+    def update(self, weight, bias):
+        self.weights += weight
+        self.bias -= bias
